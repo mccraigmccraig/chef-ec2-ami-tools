@@ -8,3 +8,6 @@ downloads and installs ec2 ami tools into /usr/local/share/ec2-ami-tools
 
 = USAGE:
 
+= LICENSE:
+
+Apache License, Version 2.0 : http://www.apache.org/licenses/LICENSE-2.0.html
