@@ -1,0 +1,10 @@
+= DESCRIPTION:
+
+downloads and installs ec2 ami tools into /usr/local/share/ec2-ami-tools
+
+= REQUIREMENTS:
+
+= ATTRIBUTES:
+
+= USAGE:
+
