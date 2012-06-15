@@ -20,7 +20,7 @@ require 'fileutils'
 
 package "unzip"
 
-install_root = node["ec2-ami-tools"]["install_root"]
+install_root = node["chef-ec2-ami-tools"]["install_root"]
 install_target = "#{install_root}/ec2-ami-tools"
 
 remote_file "/tmp/ec2-ami-tools.zip" do
