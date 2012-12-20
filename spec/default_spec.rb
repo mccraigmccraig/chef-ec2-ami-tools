@@ -1,9 +1,9 @@
 require 'chefspec'
 
-describe 'ec2-ami-tools::default' do
-  let(:chef_run) { ChefSpec::ChefRunner.new.converge 'my_new_cookbook::default' }
+describe 'chef-ec2-ami-tools::default' do
+  let(:chef_run) { ChefSpec::ChefRunner.new.converge 'chef-ec2-ami-tools::default' }
 
-  it "this cookbook needs some TDD love" do
-    pending "Add some tests, bro."
+  it "installs unzip" do
+    chef_run.should install_package 'unzip'
   end
 end
