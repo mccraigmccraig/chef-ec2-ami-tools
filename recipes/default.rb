@@ -22,7 +22,7 @@ require 'fileutils'
 package "unzip"
 
 install_root = node["chef-ec2-ami-tools"]["install_root"]
-install_target = "#{install_root}/ec2-ami-tools"
+install_target = node["chef-ec2-ami-tools"]["install_target"]
 
 remote_file "/tmp/ec2-ami-tools.zip" do
   source "http://s3.amazonaws.com/ec2-downloads/ec2-ami-tools.zip"
@@ -44,4 +44,12 @@ ruby_block "link-ec2-ami-tools" do
       FileUtils.ln_s(Dir["#{install_target}-*"].first, install_target)
     end
   end
+end
+
+file "/etc/profile.d/ec2-ami-tools.sh" do
+  owner "root"
+  group "root"
+  mode 0755
+
+  content %Q{export EC2_HOME=#{install_target}\nexport PATH=$PATH:#{install_target}/bin\n}
 end
