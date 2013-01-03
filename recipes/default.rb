@@ -49,7 +49,7 @@ end
 file "/etc/profile.d/ec2-ami-tools.sh" do
   owner "root"
   group "root"
-  mode 755
+  mode 0755
 
   content %Q{export EC2_HOME=#{install_target}\nexport PATH=$PATH:#{install_target}/bin\n}
 end
